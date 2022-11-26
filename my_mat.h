@@ -4,12 +4,13 @@
 
 #ifndef MATALA2_MY_MAT_H
 #define MATALA2_MY_MAT_H
-
+#define ROW_LENGTH 4
+#define COL_LENGTH 4
 #endif //MATALA2_MY_MAT_H
 
-void buildMatrix(int[2][2]);
+void buildMatrix(int[ROW_LENGTH][COL_LENGTH]);
 
-void isRoute(int, int);
+void isRoute(int, int, int[ROW_LENGTH][COL_LENGTH]);
 
-int shortestRoute(int, int);
+int shortestRoute(int, int, int[ROW_LENGTH][COL_LENGTH]);
 

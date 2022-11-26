@@ -5,7 +5,7 @@ int main() {
     char input;
     scanf("%c", &input);
     int row, column;
-    int matrix[2][2];
+    int matrix[ROW_LENGTH][COL_LENGTH];
     while(input != 'D'){
         switch (input) {
             case 'A':
@@ -14,12 +14,12 @@ int main() {
             case 'B':
                 scanf("%d", &row);
                 scanf("%d", &column);
-                isRoute(row, column);
+                isRoute(row, column, matrix);
                 break;
             case 'C':
                 scanf("%d", &row);
                 scanf("%d", &column);
-                printf(" %d",shortestRoute(row, column));
+                printf(" %d",shortestRoute(row, column, matrix));
                 break;
         }
         scanf("%c", &input);
