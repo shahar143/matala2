@@ -7,7 +7,7 @@
 
 #endif //MATALA2_MY_MAT_H
 
-void buildMatrix();
+void buildMatrix(int[2][2]);
 
 void isRoute(int, int);
 

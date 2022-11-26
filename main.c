@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include "my_mat.h"
+
 int main() {
     char input;
     scanf("%c", &input);
+    int row, column;
+    int matrix[2][2];
     while(input != 'D'){
-        int row;
-        int column;
         switch (input) {
             case 'A':
-                buildMatrix();
+                buildMatrix(matrix);
                 break;
             case 'B':
                 scanf("%d", &row);
