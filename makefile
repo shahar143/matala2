@@ -1,14 +1,19 @@
 COMPILER = gcc
 WARNINGS = -Wall -g
 
-mains: main.o my_mat.o
-	$(COMPILER) $(WARNINGS) main.o -o mains
+all: mains
 
-main.o: main.c
+mains: main.o my_mat.a
+	$(COMPILER) $(WARNINGS) main.o my_mat.a -o mains
+
+my_mat.a: my_mat.o
+	ar -rcs my_mat.a my_mat.o
+
+main.o: main.c my_mat.h
 	$(COMPILER) $(WARNINGS) -c main.c
 
 my_mat.o: my_mat.c my_mat.h
 	$(COMPILER) $(WARNINGS) -c my_mat.c
 
 clean:
-	rm -f *.o mains
+	rm -f *.o *.a mains

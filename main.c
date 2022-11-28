@@ -1,25 +1,31 @@
 #include <stdio.h>
+#include "my_mat.h"
 
+extern int matrix[MATRIX_DIMENSIONS][MATRIX_DIMENSIONS];
 int main() {
-    printf("Hello, World!\n");
-    int mat[10][10];
-    for(int i = 0; i < 10; i++)
-    {
-        for(int j = 0; j < 10; j++)
-        {
-            scanf("%d", &mat[i][j]);
-            printf("mat [%d][%d] = %d ", i, j, mat[i][j]);
+    char input;
+    scanf("%c", &input);
+    int row, column;
+    while(input != 'D'){
+        switch (input) {
+            case 'A':
+                buildMatrix();
+                break;
+            case 'B':
+                scanf("%d", &row);
+                scanf("%d", &column);
+                isRoute(row, column);
+                printf("\n");
+                break;
+            case 'C':
+                scanf("%d", &row);
+                scanf("%d", &column);
+                printf("%d\n",shortestRoute(row, column));
+                break;
         }
+        scanf("%c", &input);
     }
-
-    for(int i = 0; i < 10; i++)
-    {
-        for(int j = 0; j < 10; j++)
-        {
-            printf("%d ", mat[i][j]);
-        }
-        printf("\n");
-    }
-
     return 0;
 }
+
+
