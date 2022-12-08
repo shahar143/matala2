@@ -1,25 +1,28 @@
 #include <stdio.h>
+#include "my_mat.h"
+
+#define MAT_SIZE 10
 
 int main() {
-    printf("Hello, World!\n");
-    int mat[10][10];
-    for(int i = 0; i < 10; i++)
-    {
-        for(int j = 0; j < 10; j++)
-        {
-            scanf("%d", &mat[i][j]);
-            printf("mat [%d][%d] = %d ", i, j, mat[i][j]);
+
+    int mat[MAT_SIZE][MAT_SIZE];
+    char let = 'Z';
+    int row;
+    int col;
+    while(let != 'D'){
+        scanf("%c", &let);
+        if(let == 'A'){
+            buildMatrix(mat);
+        }
+        else if(let == 'B'){
+            scanf("%d %d", &row, &col);
+            isRoute(mat, row, col);
+        }
+        else if(let == 'C') {
+            scanf("%d %d", &row, &col);
+            minRoute(mat, row, col);
         }
     }
-
-    for(int i = 0; i < 10; i++)
-    {
-        for(int j = 0; j < 10; j++)
-        {
-            printf("%d ", mat[i][j]);
-        }
-        printf("\n");
-    }
-
     return 0;
 }
+
