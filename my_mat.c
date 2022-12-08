@@ -19,16 +19,6 @@ void buildMatrix(int mat[MAT_SIZE][MAT_SIZE]){
         }
     }
     Floyd_Warshall(mat);
-
-
-    for(int i = 0; i < MAT_SIZE; i++)
-    {
-        for(int j = 0; j < MAT_SIZE; j++)
-        {
-            printf("| %d |", mat[i][j]);
-        }
-        printf("\n");
-    }
 }
 
 void isRoute(int mat[MAT_SIZE][MAT_SIZE], int i, int j){

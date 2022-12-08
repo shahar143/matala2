@@ -1,9 +1,10 @@
 COMPILER = gcc
 WARNINGS = -Wall -g
+.PHONYY: all clean
 
-all: connections
+all: connections libmy_mat.a
 
-connections: main.o libmy_mat.a
+connections: main.o libmy_mat.a my_mat.o
 	$(COMPILER) $(WARNINGS) main.o my_mat.o libmy_mat.a -o connections
 
 libmy_mat.a: my_mat.o
