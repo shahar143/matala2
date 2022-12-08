@@ -1,8 +1,10 @@
 COMPILER = gcc
 WARNINGS = -Wall -g
 
-mains: main.o my_mat.so
-	$(COMPILER) $(WARNINGS) main.o my_mat.o my_mat.so -o mains ./my_mat.so
+all: connections
+
+connections: main.o my_mat.so
+	$(COMPILER) $(WARNINGS) main.o my_mat.o my_mat.so -o connections ./my_mat.so
 
 my_mat.so: my_mat.o
 	$(COMPILER) -Wall -fPIC -shared -o my_mat.so my_mat.o
