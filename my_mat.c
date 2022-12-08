@@ -21,8 +21,11 @@ void buildMatrix(int mat[MAT_SIZE][MAT_SIZE]){
     Floyd_Warshall(mat);
 }
 
-void isRoute(int mat[MAT_SIZE][MAT_SIZE], int i, int j){
+void isRoute(int mat[MAT_SIZE][MAT_SIZE]){
+    int i = 0;
+    int j = 0;
     Floyd_Warshall(mat);
+    scanf("%d%d", &i, &j);
     if(mat[i][j] > 0 && mat[i][j] < INF){
         printf("True\n");
     }
@@ -30,10 +33,13 @@ void isRoute(int mat[MAT_SIZE][MAT_SIZE], int i, int j){
         printf("False\n");
 }
 
-void minRoute(int mat[MAT_SIZE][MAT_SIZE], int row, int col){
+void minRoute(int mat[MAT_SIZE][MAT_SIZE]){
     Floyd_Warshall(mat);
-    if(mat[row][col] > 0 && mat[row][col] < INF)
-        printf("%d \n", mat[row][col]);
+    int i = 0;
+    int j = 0;
+    scanf("%d%d", &i, &j);
+    if(mat[i][j] > 0 && mat[i][j] < INF)
+        printf("%d \n", mat[i][j]);
     else printf("%d \n", -1);
 }
 

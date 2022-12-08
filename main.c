@@ -6,22 +6,19 @@
 int main() {
 
     int mat[MAT_SIZE][MAT_SIZE];
-    char let = 'Z';
-    int row;
-    int col;
+    char let;
+    scanf("%c", &let);
     while(let != 'D'){
-        scanf("%c", &let);
         if(let == 'A'){
             buildMatrix(mat);
         }
         else if(let == 'B'){
-            scanf("%d %d", &row, &col);
-            isRoute(mat, row, col);
+            isRoute(mat);
         }
         else if(let == 'C') {
-            scanf("%d %d", &row, &col);
-            minRoute(mat, row, col);
+            minRoute(mat);
         }
+        scanf("%c", &let);
     }
     return 0;
 }

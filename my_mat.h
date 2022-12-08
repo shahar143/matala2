@@ -9,8 +9,8 @@
 
 void buildMatrix(int mat[10][10]);
 
-void isRoute(int mat[10][10], int row, int col);
+void isRoute(int mat[10][10]);
 
-void minRoute(int mat[10][10], int row, int col);
+void minRoute(int mat[10][10]);
 
 void Floyd_Warshall(int mat[10][10]);
